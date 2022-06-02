@@ -1,0 +1,46 @@
+#include <Arduino.h>
+#include <Wire.h>
+#include "SparkFunHTU21D.h"
+
+//Create an instance of the object
+HTU21D myHumidity;
+
+void temp_hum_Task(void* params);
+
+void init_temp_hum_task(void){
+	xTaskCreate(
+	temp_hum_Task,
+	"temp_hum_Task",
+	4000,
+	NULL,
+	1,
+	NULL
+	);
+}
+
+void temp_hum_Task(void* params)
+{
+  //Serial.begin(115200);
+  Serial.println("HTU21D Example!");
+
+  myHumidity.begin();
+//}
+
+for(;;)
+{
+  float humd = myHumidity.readHumidity();
+  float temp = myHumidity.readTemperature();
+
+  Serial.print("Time:");
+  Serial.print(millis());
+  Serial.print(" Temperature:");
+  Serial.print(temp, 1);
+  Serial.print("C");
+  Serial.print(" Humidity:");
+  Serial.print(humd, 1);
+  Serial.print("%");
+
+  Serial.println();
+  delay(1000);
+}
+}
