@@ -6,4 +6,6 @@ El proyecto consistirá en monitorizar la temperatura y la humedad del sensor. U
 
 Realizado por Gerard Piqueras y Adrià Serran.
 
+https://user-images.githubusercontent.com/106375817/171724730-c9187780-afad-41bd-98aa-c8d2aa72327b.mp4
 https://user-images.githubusercontent.com/101885469/171686423-77ba9aef-afa1-4c2c-8519-ea54cb218728.mp4
+
